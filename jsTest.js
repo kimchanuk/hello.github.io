@@ -20,6 +20,7 @@ let arrary = [];
 let titleList = document.querySelector('.title-box');
 let discription = document.querySelector('.discription');
 const body = document.querySelector('body');
+let time = document.querySelector('.time');
 
 const images = [
   '훈이.jpg',
@@ -49,6 +50,7 @@ function loginHandle(event) {
 function reMoveClassList() {
   taskArea.classList.remove(HIDDEN_CLASSNAME);
   inputArea.classList.remove(HIDDEN_CLASSNAME);
+  time.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
@@ -232,5 +234,5 @@ fetch(url)
     const city = document.querySelector('#weather span:last-child');
     const name = data.name;
     city.innerText = `위치 : ${name}`;
-    weather.innerText = `날씨 정보 : ${data.weather[0].main} / ${data.main.temp}`;
+    weather.innerText = `날씨 : ${data.weather[0].main} / ${data.main.temp}`;
   });
